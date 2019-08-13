@@ -1,0 +1,250 @@
+@media only screen and (max-width: 767px) {
+
+    #mobile-navbar {
+        display: block;
+    }
+
+    #mobile-navbar i {
+        width: 20px !important;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    #non-mobile-header {
+        display: none;
+    }
+
+    .navbar {
+        max-height: 51px;
+        width: 100%;
+    }
+
+    #content {
+        width: 100%;
+    }
+
+    #content.active {
+        width: 100%;
+    }
+
+    .container-fluid > .navbar-collapse {
+        background-color: #ffffff;
+    }
+
+    .navbar-toggle {
+        background-color: #2f4050;
+    }
+
+    .main-table {
+        display: none;
+    }
+
+    .float-right {
+        float: right;
+    }
+
+    .margin-left {
+        margin-left: 30px !important;
+    }
+
+    .notification-icon {
+        font-size: 20px;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        padding: 5px 15px;
+    }
+
+    a[aria-expanded="true"] {
+        color: black;
+        background: #FFFFFF;
+    }
+
+    .filter-no-padding-mobile {
+        padding-left: 0px !important;
+    }
+
+    .padding-left-30-mobile {
+        padding-left: 30px !important;
+    }
+
+    .filter-no-padding {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .margin-top-25 {
+        margin-top: 25px !important;
+    }
+
+    .right-zero {
+        right: 0 !important;
+    }
+
+    .margin-top-15 {
+        margin-top: 15px !important;
+    }
+
+    #manage-pending-session-mobile-table tr {
+        border: 1px solid #FFFFFF;
+        width: 100%;
+        background-color: #eeeeee;
+    }
+
+    .register-div {
+        display: inline-flex;
+        margin-top: 28px;
+    }
+
+    .login-form {
+        border-right: none;
+    }
+
+    #manage-pending-session-mobile-table tr td {
+        font-size: 12px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .register-form {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .register-outer {
+        margin: auto 0px;
+    }
+
+    .mobile-view {
+        display: block;
+    }
+
+    .desktop-view {
+        display: none;
+    }
+
+    .search-bar-mobile {
+        font-weight: normal;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .customize-entries {
+        font-weight: normal;
+        float: right;
+        margin-right: -26px;
+        margin-top: 8px;
+    }
+
+    .recommendation-list {
+        width: 50%;
+    }
+
+    .no-record-mobile {
+        border: 1px solid #FFFFFF;
+        width: 100%;
+        background-color: #eeeeee;
+    }
+
+    .session-paginate-number {
+        margin-right: 8px;
+    }
+
+    .requested-session-adjustment {
+        margin-top: 35px;
+    }
+
+    .manage-user-adjust {
+        margin-top: 25px;
+        padding-top: 0px;
+    }
+
+    #search-bar {
+        padding-right: 0px !important;
+        font-weight: normal;
+        text-align: right;
+        padding-left: 0px
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    #mobile-navbar {
+        display: none;
+    }
+
+    #session-mobile-table, #manage-session-mobile-table, #manage-user-mobile-table, #manage-pending-session-mobile-table {
+        display: none;
+    }
+
+    .main-table {
+        display: inline-table;
+    }
+
+    .mobile-view {
+        display: block;
+    }
+
+    .padding-left-30 {
+        padding-left: 30px !important;
+    }
+
+    .padding-left-45 {
+        padding-left: 45px !important;
+    }
+
+    .decline-filter {
+        padding-left: 40px !important;
+        float: right
+    }
+
+    .approved-filter {
+        padding-left: 20px !important;
+        float: right;
+    }
+
+    .done-filter {
+        padding-left: 40px !important;
+        float: right
+    }
+
+    .pending-filter {
+        padding-left: 30px !important;
+        float: right
+    }
+
+    .book-filter {
+        padding-left: 25px !important;
+        float: right
+    }
+
+    .all-filter {
+        width: fit-content;
+        float: right
+    }
+
+    .right-zero-main {
+        right: 0 !important;
+        left: unset;
+    }
+
+    .login-form {
+        border-right: 1px solid #e7eaec;
+        margin: auto;
+    }
+
+    .register-form {
+        padding-bottom: 10px;
+    }
+
+    .mobile-view {
+        display: none;
+    }
+
+    .desktop-view {
+        display: block;
+    }
+
+}

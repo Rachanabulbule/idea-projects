@@ -1,0 +1,13 @@
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/IdeaProjects/scala-04-assignment/src/main/scala/TestDemo.scala:1:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest._[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/IdeaProjects/scala-04-assignment/src/main/scala/TestDemo.scala:2:24: not found: type Flatspec[0m
+[0m[[0m[31merror[0m] [0m[0mclass TestDemo extends Flatspec with matchers{[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/IdeaProjects/scala-04-assignment/src/main/scala/TestDemo.scala:2:38: not found: type matchers[0m
+[0m[[0m[31merror[0m] [0m[0mclass TestDemo extends Flatspec with matchers{[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/IdeaProjects/scala-04-assignment/src/main/scala/TestDemo.scala:3:10: value should is not a member of String[0m
+[0m[[0m[31merror[0m] [0m[0m"Person" should "compare 2 objects" is{[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m

@@ -1,0 +1,140 @@
+.btn-primary {
+    color: #fff;
+    background-color: #7d9ec0;
+    border: 2px solid #fff;
+    font-weight: bold;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a.btn.btn-sm.btn-primary.btn-create {
+    box-shadow: 0 4px 5px -5px #333;
+}
+
+.session-custom-search-bar {
+    margin-bottom: 0 !important;
+}
+
+.btn-danger {
+    background-color: #c0392b !important;
+}
+
+.label-success {
+    background-color: #27ae60
+}
+
+.manage-btn {
+    padding: 4px 8px !important;
+}
+
+.manage-session-btn {
+    display: flex;
+}
+
+.paginate-number {
+    margin-bottom: 25px;
+}
+
+.custom-margin-left {
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    #manage-user-mobile-table {
+        width: -webkit-fill-available;
+    }
+
+    #manage-session-tbody-mobile tr, #manage-user-tbody-mobile tr {
+        border: 1px solid #FFFFFF;
+        width: 100%;
+        background-color: #eeeeee;
+    }
+
+    #manage-session-tbody-mobile tr td, #manage-user-tbody-mobile tr td {
+        font-size: 12px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .row-space {
+        height: 10px;
+        background-color: #FFFFFF !important;
+    }
+
+    .session-topic {
+        text-align: center;
+        font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 15px !important;
+        letter-spacing: 1px;
+        border-bottom: none !important;
+        border-top: none !important;
+        padding: 5px 0px;
+    }
+
+    .manage-user-container-custom-margin {
+        text-align: center;
+    }
+
+    .manage-user-container-custom-margin > label {
+        padding-bottom: 10px;
+    }
+
+    .all-users {
+        padding-top: 10px;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    .session-info {
+        height: 75px;
+    }
+
+    .table-header-color {
+        background-color: rgb(26, 179, 148);
+    }
+
+    .manage-btn {
+        padding: 2px 6px !important;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .table-buttons {
+        text-align: left;
+    }
+
+    .new-button-tr {
+        text-align: left !important;
+        background-color: #FFFFFF !important;
+    }
+
+    .new-button, .new-button-td {
+        padding-left: 0px !important;
+    }
+
+    .float-left {
+        float: left;
+    }
+
+    .mobile-manage-session-div {
+        margin-left: 13px;
+        margin-right: 13px;
+    }
+
+    #search-text-mobile {
+        display: inline-block;
+        width: 97%;
+        margin-left: 5px;
+    }
+
+    .remove-padding-left {
+        padding-left: 0px;
+    }
+
+    .paginate-number {
+        margin-right: 20px;
+    }
+
+    .user-paginate-number {
+        margin-right: 8px;
+    }
+}

@@ -1,0 +1,72 @@
+.modal-title-outer {
+
+    background-color: #1ab394;
+    text-align: center;
+    border-bottom: 1px solid #a8a8a8;
+
+}
+
+.from-title {
+    font-size: 20px;
+    color: #fff;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.preview-questions {
+    margin-top: 15px;
+    padding-left: 20px;
+    line-height: 40px;
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 20px;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #000000;
+    font-weight: bold;
+}
+
+.preview-options {
+    padding-left: 20px;
+    line-height: 40px;
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    color: #676a6c;
+}
+.preview-comment {
+    font-size: 12px;
+    border: 2px dotted #a8a8a8;
+    margin-left:4%;
+    width: 60%;
+}
+
+.modal-body {
+    border: none;
+}
+
+.modal-footer-outer {
+    background-color: #2f4050;
+    text-align: center;
+}
+
+.close-modal-btn {
+    padding: 5px 15px 5px 15px;
+    border-radius: 0px;
+    border: 2px solid #1ab394;
+    background-color: #1ab394;
+    color: #fff;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.close-modal-btn:hover {
+    background-color: #1ab394;
+    color: #FFFFFF;
+    border-color: #1ab399;
+}

@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/IdeaProjects/scala-05-assignment/src/main/scala/com/knoldus/Calculator/Main.scala:5:20: reference to Calculator is ambiguous;[0m
+[0m[[0m[31merror[0m] [0m[0mit is imported twice in the same scope by[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.knoldus.Calculator.Calculator[0m
+[0m[[0m[31merror[0m] [0m[0mand import com.knoldus.Calculator[0m
+[0m[[0m[31merror[0m] [0m[0m  val calculator = Calculator(12, 2)[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

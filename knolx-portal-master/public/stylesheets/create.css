@@ -1,0 +1,215 @@
+.create-outer {
+    margin-top: 30px;
+    background-color: #FFF;
+    position: relative;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-top: 1px solid #fff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.selection{
+   width:100%;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #ccc !important;
+    border-radius: 0px !important;
+    color: #676a6c !important;
+}
+.select2-selection__rendered {
+    color: #676a6c !important;
+}
+
+.control-label {
+    padding-top: 4px;
+    margin-bottom: 0;
+    text-align: right;
+    color:#676a6c;
+}
+
+.col-md-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.create-email {
+
+    margin-top: 15px;
+}
+
+.preview {
+    padding-top: 3px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+}
+
+.preview:hover {
+    color: #EC7063;
+}
+
+.feedback-duration {
+    line-height: 0.5em;
+    padding: 10px 0px;
+    box-shadow: 0 4px 10px -5px #a8a8a8;
+}
+
+.radio-style {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #566573;
+    font-weight: normal;
+    margin-top: 0 !important;
+}
+
+.radio-style-days {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #566573;
+    font-weight: normal;
+    margin-top: 0 !important;
+}
+
+.days {
+    width: 55px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    margin-left: 8px;
+}
+
+.default-radio {
+    margin-top: 3px;
+}
+
+#days {
+    font-size: 22px;
+    color: #566573;
+}
+
+#days:disabled {
+    background-color: transparent;
+    color: #566573;
+}
+
+.duration-title {
+    text-align: center;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #639593;
+    font-weight: normal;
+    margin-bottom: 18px;
+    margin-left: -15px;
+}
+
+.create-footer {
+    height: 30px;
+    background-color: #dcdcdc;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 25px;
+}
+
+.feedback-expiration {
+    padding-top: 15px;
+}
+
+.pin_text {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #888888;
+    align-self: center;
+
+}
+
+.pin-checkbox-text {
+    font-size: 17px;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #888888;
+    margin: 0px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    margin-left: 10px;
+}
+
+.pin_text:before {
+    margin-top: 5px;
+    content: "\f00d";
+    font-family: "FontAwesome";
+    display: inline-block;
+    width: 10px;
+    color: #F1948A;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 50px;
+    position: relative;
+}
+
+.mendatory_text:before {
+    margin-top: 15px;
+    content: "\f0d9";
+    font-family: "FontAwesome";
+    display: inline-block;
+    width: 10px;
+    color: #5499C7;
+    font-size: 20px;
+    margin-left: 50px;
+    position: relative;
+}
+
+.mandatory-text {
+    font-size: 17px;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    margin: 0px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    margin-left: 0px;
+    background-color: #5499C7;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+.custom-checkbox:checked + .pin_text:before {
+    margin-top: 3px;
+    content: "\f00c";
+    font-family: "FontAwesome";
+    display: inline-block;
+    animation: tick 150ms ease-in;
+    font-size: 20px;
+    color: #16A085;
+}
+
+@keyframes tick {
+    0% {
+        transform: scale(0);
+    }
+
+    90% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hr-line-dashed {
+    border-top: 1px dashed #e7eaec;
+    height: 1px;
+    padding-top: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    .pin_text:before {
+        margin-left: 30px;
+    }
+}

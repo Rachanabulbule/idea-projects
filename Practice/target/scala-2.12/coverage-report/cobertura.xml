@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage 
+line-rate="0.90" lines-valid="71" lines-covered="64" branches-valid="8" branches-covered="6" branch-rate="0.75" complexity="0" version="1.0" timestamp="1564118202510">
+    <sources>
+        <source>--source</source>
+        <source>/home/knoldus/IdeaProjects/Practice/src/main/scala</source>
+    </sources>
+    <packages>
+        <package name="&lt;empty&gt;" line-rate="0.90" branch-rate="0.75" complexity="0">
+            <classes>
+                <class name="Pattern" filename="Exercise.scala" line-rate="0.60" branch-rate="0.50" complexity="0">
+                    <methods>
+                        <method 
+                        name="&lt;empty&gt;/Pattern/matchPatternWithExpression" signature="()V" line-rate="0.60" branch-rate="0.50" complexity="0">
+                            <lines>
+                                <line number="79" hits="1" branch="false"/>
+                                <line number="79" hits="1" branch="false"/>
+                                <line number="79" hits="0" branch="false"/>
+                                <line number="79" hits="0" branch="false"/>
+                                <line number="79" hits="1" branch="false"/>
+                            </lines>
+</method>
+                    </methods>
+                    <lines>
+                        <line number="79" hits="1" branch="false"/>
+                        <line number="79" hits="1" branch="false"/>
+                        <line number="79" hits="0" branch="false"/>
+                        <line number="79" hits="0" branch="false"/>
+                        <line number="79" hits="1" branch="false"/>
+                    </lines>
+                </class>
+                <class name="Exercise5" filename="Exercise.scala" line-rate="1.00" branch-rate="1.00" complexity="0">
+                    <methods>
+                        <method name="&lt;empty&gt;/Exercise5/innerFun5" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="17" hits="1" branch="false"/>
+                                <line number="20" hits="1" branch="false"/>
+                                <line number="15" hits="1" branch="false"/>
+                                <line number="16" hits="1" branch="false"/>
+                                <line number="16" hits="1" branch="false"/>
+                                <line number="17" hits="1" branch="false"/>
+                                <line number="17" hits="1" branch="false"/>
+                                <line number="17" hits="1" branch="false"/>
+                                <line number="16" hits="1" branch="false"/>
+                                <line number="16" hits="1" branch="false"/>
+                            </lines>
+                        </method>
+                    </methods>
+                    <lines>
+                        <line number="17" hits="1" branch="false"/>
+                        <line number="20" hits="1" branch="false"/>
+                        <line number="15" hits="1" branch="false"/>
+                        <line number="16" hits="1" branch="false"/>
+                        <line number="16" hits="1" branch="false"/>
+                        <line number="17" hits="1" branch="false"/>
+                        <line number="17" hits="1" branch="false"/>
+                        <line number="17" hits="1" branch="false"/>
+                        <line number="16" hits="1" branch="false"/>
+                        <line number="16" hits="1" branch="false"/>
+                    </lines>
+                </class>
+                <class name="Brackets" filename="Exercise.scala" line-rate="0.93" branch-rate="0.50" complexity="0">
+                    <methods>
+                        <method name="&lt;empty&gt;/Brackets/matchBrackets" signature="()V" line-rate="0.93" branch-rate="0.50" complexity="0">
+                            <lines>
+                                <line number="55" hits="1" branch="false"/>
+                                <line number="51" hits="1" branch="false"/>
+                                <line number="53" hits="1" branch="false"/>
+                                <line number="56" hits="1" branch="false"/>
+                                <line number="51" hits="1" branch="false"/>
+                                <line number="53" hits="1" branch="false"/>
+                                <line number="56" hits="0" branch="false"/>
+                                <line number="52" hits="1" branch="false"/>
+                                <line number="54" hits="1" branch="false"/>
+                                <line number="54" hits="1" branch="false"/>
+                                <line number="56" hits="0" branch="false"/>
+                                <line number="61" hits="1" branch="false"/>
+                                <line number="53" hits="1" branch="false"/>
+                                <line number="55" hits="1" branch="false"/>
+                                <line number="56" hits="1" branch="false"/>
+                                <line number="53" hits="1" branch="false"/>
+                                <line number="51" hits="1" branch="false"/>
+                                <line number="52" hits="1" branch="false"/>
+                                <line number="56" hits="1" branch="false"/>
+                                <line number="54" hits="1" branch="false"/>
+                                <line number="51" hits="1" branch="false"/>
+                                <line number="61" hits="1" branch="false"/>
+                                <line number="55" hits="1" branch="false"/>
+                                <line number="52" hits="1" branch="false"/>
+                                <line number="53" hits="1" branch="false"/>
+                                <line number="56" hits="1" branch="false"/>
+                                <line number="51" hits="1" branch="false"/>
+                            </lines>
+                        </method>
+                    </methods>
+                    <lines>
+                        <line number="55" hits="1" branch="false"/>
+                        <line number="51" hits="1" branch="false"/>
+                        <line number="53" hits="1" branch="false"/>
+                        <line number="56" hits="1" branch="false"/>
+                        <line number="51" hits="1" branch="false"/>
+                        <line number="53" hits="1" branch="false"/>
+                        <line number="56" hits="0" branch="false"/>
+                        <line number="52" hits="1" branch="false"/>
+                        <line number="54" hits="1" branch="false"/>
+                        <line number="54" hits="1" branch="false"/>
+                        <line number="56" hits="0" branch="false"/>
+                        <line number="61" hits="1" branch="false"/>
+                        <line number="53" hits="1" branch="false"/>
+                        <line number="55" hits="1" branch="false"/>
+                        <line number="56" hits="1" branch="false"/>
+                        <line number="53" hits="1" branch="false"/>
+                        <line number="51" hits="1" branch="false"/>
+                        <line number="52" hits="1" branch="false"/>
+                        <line number="56" hits="1" branch="false"/>
+                        <line number="54" hits="1" branch="false"/>
+                        <line number="51" hits="1" branch="false"/>
+                        <line number="61" hits="1" branch="false"/>
+                        <line number="55" hits="1" branch="false"/>
+                        <line number="52" hits="1" branch="false"/>
+                        <line number="53" hits="1" branch="false"/>
+                        <line number="56" hits="1" branch="false"/>
+                        <line number="51" hits="1" branch="false"/>
+                    </lines>
+                </class>
+                <class name="Factor" filename="Exercise.scala" line-rate="1.00" branch-rate="1.00" complexity="0">
+                    <methods>
+                        <method name="&lt;empty&gt;/Factor/findFactor" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="30" hits="1" branch="false"/>
+                                <line number="29" hits="1" branch="false"/>
+                                <line number="29" hits="1" branch="false"/>
+                                <line number="28" hits="1" branch="false"/>
+                                <line number="28" hits="1" branch="false"/>
+                                <line number="30" hits="1" branch="false"/>
+                                <line number="29" hits="1" branch="false"/>
+                                <line number="29" hits="1" branch="false"/>
+                                <line number="29" hits="1" branch="false"/>
+                                <line number="30" hits="1" branch="false"/>
+                                <line number="28" hits="1" branch="false"/>
+                                <line number="29" hits="1" branch="false"/>
+                                <line number="33" hits="1" branch="false"/>
+                            </lines>
+                        </method>
+                    </methods>
+                    <lines>
+                        <line number="30" hits="1" branch="false"/>
+                        <line number="29" hits="1" branch="false"/>
+                        <line number="29" hits="1" branch="false"/>
+                        <line number="28" hits="1" branch="false"/>
+                        <line number="28" hits="1" branch="false"/>
+                        <line number="30" hits="1" branch="false"/>
+                        <line number="29" hits="1" branch="false"/>
+                        <line number="29" hits="1" branch="false"/>
+                        <line number="29" hits="1" branch="false"/>
+                        <line number="30" hits="1" branch="false"/>
+                        <line number="28" hits="1" branch="false"/>
+                        <line number="29" hits="1" branch="false"/>
+                        <line number="33" hits="1" branch="false"/>
+                    </lines>
+                </class>
+                <class name="RegExpression" filename="Exercise.scala" line-rate="1.00" branch-rate="1.00" complexity="0">
+                    <methods>
+                        <method 
+                        name="&lt;empty&gt;/RegExpression/findAndReplace" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="85" hits="1" branch="false"/>
+                            </lines>
+</method>
+                    </methods>
+                    <lines>
+                        <line number="85" hits="1" branch="false"/>
+                    </lines>
+                </class>
+                <class name="PrimeFactor" filename="Exercise.scala" line-rate="1.00" branch-rate="1.00" complexity="0">
+                    <methods>
+                        <method 
+                        name="&lt;empty&gt;/PrimeFactor/listPrimeFactor" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="40" hits="1" branch="false"/>
+                                <line number="41" hits="1" branch="false"/>
+                                <line number="40" hits="1" branch="false"/>
+                                <line number="40" hits="1" branch="false"/>
+                                <line number="41" hits="1" branch="false"/>
+                                <line number="41" hits="1" branch="false"/>
+                                <line number="41" hits="1" branch="false"/>
+                            </lines>
+</method>
+                    </methods>
+                    <lines>
+                        <line number="40" hits="1" branch="false"/>
+                        <line number="41" hits="1" branch="false"/>
+                        <line number="40" hits="1" branch="false"/>
+                        <line number="40" hits="1" branch="false"/>
+                        <line number="41" hits="1" branch="false"/>
+                        <line number="41" hits="1" branch="false"/>
+                        <line number="41" hits="1" branch="false"/>
+                    </lines>
+                </class>
+                <class name="Exercise1" filename="Exercise.scala" line-rate="1.00" branch-rate="1.00" complexity="0">
+                    <methods>
+                        <method name="&lt;empty&gt;/Exercise1/toUppercase" signature="()V" line-rate="1.00" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="7" hits="1" branch="false"/>
+                            </lines>
+                        </method>
+                    </methods>
+                    <lines>
+                        <line number="7" hits="1" branch="false"/>
+                    </lines>
+                </class>
+                <class name="Exercise8" filename="Exercise.scala" line-rate="0.57" branch-rate="1.00" complexity="0">
+                    <methods>
+                        <method 
+                        name="&lt;empty&gt;/Exercise8/listOperation" signature="()V" line-rate="0.57" branch-rate="1.00" complexity="0">
+                            <lines>
+                                <line number="68" hits="1" branch="false"/>
+                                <line number="69" hits="0" branch="false"/>
+                                <line number="71" hits="1" branch="false"/>
+                                <line number="70" hits="0" branch="false"/>
+                                <line number="69" hits="1" branch="false"/>
+                                <line number="68" hits="0" branch="false"/>
+                                <line number="70" hits="1" branch="false"/>
+                            </lines>
+</method>
+                    </methods>
+                    <lines>
+                        <line number="68" hits="1" branch="false"/>
+                        <line number="69" hits="0" branch="false"/>
+                        <line number="71" hits="1" branch="false"/>
+                        <line number="70" hits="0" branch="false"/>
+                        <line number="69" hits="1" branch="false"/>
+                        <line number="68" hits="0" branch="false"/>
+                        <line number="70" hits="1" branch="false"/>
+                    </lines>
+                </class>
+            </classes>
+        </package>
+    </packages>
+</coverage>

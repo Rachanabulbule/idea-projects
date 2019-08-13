@@ -1,0 +1,1619 @@
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title id="title">
+          Exercise.scala.html
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/css/theme.default.min.css" type="text/css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.20.1/js/jquery.tablesorter.min.js"></script><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" type="text/css"/><script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script><script type="text/javascript">
+        $(document).ready(function() {$(".tablesorter").tablesorter();});
+      </script>
+        <style>
+          table.codegrid { font-family: monospace; font-size: 12px; width: auto!important; }table.statementlist { width: auto!important; font-size: 13px; } table.codegrid td { padding: 0!important; border: 0!important } table td.linenumber { width: 40px!important; } 
+        </style>
+      </head>
+      <body style="font-family: monospace;">
+        <ul class="nav nav-tabs">
+          <li>
+            <a href="#codegrid" data-toggle="tab">Codegrid</a>
+          </li>
+          <li>
+            <a href="#statementlist" data-toggle="tab">Statement List</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="codegrid">
+            <pre style='font-size: 12pt; font-family: courier, monospace;'>1 <span style=''>//Pack consecutive duplicates
+</span>2 <span style=''>import scala.annotation.tailrec
+</span>3 <span style=''>
+</span>4 <span style=''>//UPPERCASE
+</span>5 <span style=''>class Exercise1 {
+</span>6 <span style=''>  def toUppercase(s: String): String = {
+</span>7 <span style=''>    </span><span style='background: #AEF1AE'>s.toUpperCase</span><span style=''>
+</span>8 <span style=''>  }
+</span>9 <span style=''>}
+</span>10 <span style=''>
+</span>11 <span style=''>//SUM OF ALL UNIQUE MULTIPLES OF GIVEN NUMBER
+</span>12 <span style=''>class Exercise5 {
+</span>13 <span style=''>  def outerFun5(limit: Int, i: Int): Int = {
+</span>14 <span style=''>    def innerFun5(n: Int, i: Int, sum: Int): Int = n match {
+</span>15 <span style=''>      case _ if </span><span style='background: #AEF1AE'>n == limit</span><span style=''> =&gt; sum
+</span>16 <span style=''>      case n =&gt; if (</span><span style='background: #AEF1AE'>n % i != 0</span><span style=''>) </span><span style='background: #AEF1AE'>innerFun5(n + 1, i, sum)</span><span style=''>
+</span>17 <span style=''>      else </span><span style='background: #AEF1AE'>innerFun5(n + 1, i, sum + n)</span><span style=''>
+</span>18 <span style=''>    }
+</span>19 <span style=''>
+</span>20 <span style=''>    </span><span style='background: #AEF1AE'>innerFun5(i, i, sum = 0)</span><span style=''>
+</span>21 <span style=''>  }
+</span>22 <span style=''>}
+</span>23 <span style=''>
+</span>24 <span style=''>//FACTORS OF A GIVEN NUMBER
+</span>25 <span style=''>class Factor {
+</span>26 <span style=''>  def listFactor(n: Int): List[Int] = {
+</span>27 <span style=''>    def findFactor(n: Int, a: Int = 2, l: List[Int] = List()): List[Int] = a match {
+</span>28 <span style=''>      case _ if (</span><span style='background: #AEF1AE'>a == n</span><span style=''>) =&gt; </span><span style='background: #AEF1AE'>l :+ a</span><span style=''>
+</span>29 <span style=''>      case a =&gt; if (</span><span style='background: #AEF1AE'>n % a == 0</span><span style=''>) </span><span style='background: #AEF1AE'>findFactor(n, a + 1, l :+ a)</span><span style=''>
+</span>30 <span style=''>      else </span><span style='background: #AEF1AE'>findFactor(n, a + 1, l)</span><span style=''>
+</span>31 <span style=''>    }
+</span>32 <span style=''>
+</span>33 <span style=''>    </span><span style='background: #AEF1AE'>findFactor(n)</span><span style=''>
+</span>34 <span style=''>  }
+</span>35 <span style=''>}
+</span>36 <span style=''>
+</span>37 <span style=''>//PRIME FACTRORS OF A GIVEN NUMBER
+</span>38 <span style=''>class PrimeFactor {
+</span>39 <span style=''>  def listPrimeFactor(num: Int, list: List[Int] = List()): List[Int] = {
+</span>40 <span style=''>    </span><span style='background: #AEF1AE'>for (n &lt;- 2 to num if (num % n == 0)) {
+</span>41 <span style=''></span><span style='background: #AEF1AE'>      return listPrimeFactor(num / n, list :+ n)</span><span style=''>
+</span>42 <span style=''>    }
+</span>43 <span style=''>    list
+</span>44 <span style=''>  }
+</span>45 <span style=''>}
+</span>46 <span style=''>
+</span>47 <span style=''>//COMPLETE EXPRESSION OF PARENTHESIS
+</span>48 <span style=''>class Brackets {
+</span>49 <span style=''>  def passString(s: String): Boolean = {
+</span>50 <span style=''>    def matchBrackets(m: Int, sum: Int = 0, count: Int = 0): Boolean = (s.charAt(m), sum, count) match {
+</span>51 <span style=''>      case (_, sum, _) if (</span><span style='background: #AEF1AE'>((s.charAt(m) == '{' || s.charAt(m) == '[' || s.charAt(m) == '(')) &amp;&amp; (m &gt; 0)</span><span style=''>) =&gt;
+</span>52 <span style=''>        </span><span style='background: #AEF1AE'>matchBrackets(m - 1, sum + 1, count)</span><span style=''>
+</span>53 <span style=''>      case (_, _, count) if (</span><span style='background: #AEF1AE'>((s.charAt(m) == '}' || s.contains(m) == ']' || s.charAt(m) == ')')) &amp;&amp; (m &gt; 0)</span><span style=''>) =&gt;
+</span>54 <span style=''>        </span><span style='background: #AEF1AE'>matchBrackets(m - 1, sum, count + 1)</span><span style=''>
+</span>55 <span style=''>      case (x, _, _) if (</span><span style='background: #AEF1AE'>m &gt; 0</span><span style=''>) =&gt; </span><span style='background: #AEF1AE'>matchBrackets(m - 1, sum, count)</span><span style=''>
+</span>56 <span style=''>      case (_, sum, count) =&gt; if (</span><span style='background: #AEF1AE'>(count == sum) &amp;&amp; (m == 0)</span><span style=''>) </span><span style='background: #AEF1AE'>true</span><span style=''> else </span><span style='background: #F0ADAD'>false</span><span style=''>
+</span>57 <span style=''>      //case _ if(count!=sum)=&gt; false
+</span>58 <span style=''>
+</span>59 <span style=''>    }
+</span>60 <span style=''>
+</span>61 <span style=''>    </span><span style='background: #AEF1AE'>matchBrackets(s.length - 1)</span><span style=''>
+</span>62 <span style=''>  }
+</span>63 <span style=''>}
+</span>64 <span style=''>
+</span>65 <span style=''>
+</span>66 <span style=''>class Exercise8 {
+</span>67 <span style=''>  def listOperation(l1: List[Any], l2: List[Any]): Boolean = (l1, l2) match {
+</span>68 <span style=''>    case _ if (</span><span style='background: #AEF1AE'>l1 == l2</span><span style=''>) =&gt; </span><span style='background: #F0ADAD'>true</span><span style=''>
+</span>69 <span style=''>    case (_, l2) if (</span><span style='background: #AEF1AE'>l1.contains(l2)</span><span style=''>) =&gt; </span><span style='background: #F0ADAD'>true</span><span style=''>
+</span>70 <span style=''>    case (l1, _) if (</span><span style='background: #AEF1AE'>l2.contains(l1)</span><span style=''>) =&gt; </span><span style='background: #F0ADAD'>true</span><span style=''>
+</span>71 <span style=''>    case _ =&gt; </span><span style='background: #AEF1AE'>false</span><span style=''>
+</span>72 <span style=''>  }
+</span>73 <span style=''>
+</span>74 <span style=''>}
+</span>75 <span style=''>
+</span>76 <span style=''>
+</span>77 <span style=''>class Pattern {
+</span>78 <span style=''>  def matchPatternWithExpression(str: String, expression: String): Boolean = {
+</span>79 <span style=''>    if(</span><span style='background: #AEF1AE'>str.matches(expression)</span><span style=''>) </span><span style='background: #AEF1AE'>true</span><span style=''> else </span><span style='background: #F0ADAD'>false</span><span style=''>
+</span>80 <span style=''>  }
+</span>81 <span style=''>}
+</span>82 <span style=''>
+</span>83 <span style=''>class RegExpression{
+</span>84 <span style=''>  def findAndReplace(str:String,expression: String):String={
+</span>85 <span style=''>    </span><span style='background: #AEF1AE'>str.replaceAll(expression,&quot; &quot;)</span><span style=''>
+</span>86 <span style=''>  }
+</span>87 <span style=''>}
+</span></pre>
+          </div>
+          <div class="tab-pane" id="statementlist">
+            <table cellspacing="0" cellpadding="0" class="table statementlist">
+      <tr>
+        <th>Line</th>
+        <th>Stmt Id</th>
+        <th>Pos</th>
+        <th>Tree</th>
+        <th>Symbol</th>
+        <th>Code</th>
+      </tr><tr>
+        <td>
+          7
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          138
+          -
+          151
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.toUpperCase
+        </td>
+        <td style="background: #AEF1AE">
+          s.toUpperCase()
+        </td>
+      </tr><tr>
+        <td>
+          15
+        </td>
+        <td>
+          2
+        </td>
+        <td>
+          345
+          -
+          355
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.==
+        </td>
+        <td style="background: #AEF1AE">
+          n.==(limit)
+        </td>
+      </tr><tr>
+        <td>
+          16
+        </td>
+        <td>
+          5
+        </td>
+        <td>
+          395
+          -
+          419
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Exercise5.innerFun5
+        </td>
+        <td style="background: #AEF1AE">
+          innerFun5(n.+(1), i, sum)
+        </td>
+      </tr><tr>
+        <td>
+          16
+        </td>
+        <td>
+          4
+        </td>
+        <td>
+          405
+          -
+          410
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #AEF1AE">
+          n.+(1)
+        </td>
+      </tr><tr>
+        <td>
+          16
+        </td>
+        <td>
+          3
+        </td>
+        <td>
+          383
+          -
+          393
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.!=
+        </td>
+        <td style="background: #AEF1AE">
+          n.%(i).!=(0)
+        </td>
+      </tr><tr>
+        <td>
+          16
+        </td>
+        <td>
+          6
+        </td>
+        <td>
+          395
+          -
+          419
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          Exercise5.innerFun5
+        </td>
+        <td style="background: #AEF1AE">
+          innerFun5(n.+(1), i, sum)
+        </td>
+      </tr><tr>
+        <td>
+          17
+        </td>
+        <td>
+          8
+        </td>
+        <td>
+          451
+          -
+          458
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #AEF1AE">
+          sum.+(n)
+        </td>
+      </tr><tr>
+        <td>
+          17
+        </td>
+        <td>
+          7
+        </td>
+        <td>
+          441
+          -
+          446
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #AEF1AE">
+          n.+(1)
+        </td>
+      </tr><tr>
+        <td>
+          17
+        </td>
+        <td>
+          10
+        </td>
+        <td>
+          431
+          -
+          459
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          Exercise5.innerFun5
+        </td>
+        <td style="background: #AEF1AE">
+          innerFun5(n.+(1), i, sum.+(n))
+        </td>
+      </tr><tr>
+        <td>
+          17
+        </td>
+        <td>
+          9
+        </td>
+        <td>
+          431
+          -
+          459
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Exercise5.innerFun5
+        </td>
+        <td style="background: #AEF1AE">
+          innerFun5(n.+(1), i, sum.+(n))
+        </td>
+      </tr><tr>
+        <td>
+          20
+        </td>
+        <td>
+          11
+        </td>
+        <td>
+          471
+          -
+          495
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Exercise5.innerFun5
+        </td>
+        <td style="background: #AEF1AE">
+          innerFun5(i, i, 0)
+        </td>
+      </tr><tr>
+        <td>
+          28
+        </td>
+        <td>
+          14
+        </td>
+        <td>
+          699
+          -
+          705
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          scala.collection.SeqLike.:+
+        </td>
+        <td style="background: #AEF1AE">
+          l.:+[Int, List[Int]](a)(immutable.this.List.canBuildFrom[Int])
+        </td>
+      </tr><tr>
+        <td>
+          28
+        </td>
+        <td>
+          13
+        </td>
+        <td>
+          701
+          -
+          701
+        </td>
+        <td>
+          TypeApply
+        </td>
+        <td>
+          scala.collection.immutable.List.canBuildFrom
+        </td>
+        <td style="background: #AEF1AE">
+          immutable.this.List.canBuildFrom[Int]
+        </td>
+      </tr><tr>
+        <td>
+          28
+        </td>
+        <td>
+          12
+        </td>
+        <td>
+          688
+          -
+          694
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.==
+        </td>
+        <td style="background: #AEF1AE">
+          a.==(n)
+        </td>
+      </tr><tr>
+        <td>
+          29
+        </td>
+        <td>
+          17
+        </td>
+        <td>
+          761
+          -
+          761
+        </td>
+        <td>
+          TypeApply
+        </td>
+        <td>
+          scala.collection.immutable.List.canBuildFrom
+        </td>
+        <td style="background: #AEF1AE">
+          immutable.this.List.canBuildFrom[Int]
+        </td>
+      </tr><tr>
+        <td>
+          29
+        </td>
+        <td>
+          20
+        </td>
+        <td>
+          738
+          -
+          766
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          Factor.findFactor
+        </td>
+        <td style="background: #AEF1AE">
+          findFactor(n, a.+(1), l.:+[Int, List[Int]](a)(immutable.this.List.canBuildFrom[Int]))
+        </td>
+      </tr><tr>
+        <td>
+          29
+        </td>
+        <td>
+          16
+        </td>
+        <td>
+          752
+          -
+          757
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #AEF1AE">
+          a.+(1)
+        </td>
+      </tr><tr>
+        <td>
+          29
+        </td>
+        <td>
+          19
+        </td>
+        <td>
+          738
+          -
+          766
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Factor.findFactor
+        </td>
+        <td style="background: #AEF1AE">
+          findFactor(n, a.+(1), l.:+[Int, List[Int]](a)(immutable.this.List.canBuildFrom[Int]))
+        </td>
+      </tr><tr>
+        <td>
+          29
+        </td>
+        <td>
+          18
+        </td>
+        <td>
+          759
+          -
+          765
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          scala.collection.SeqLike.:+
+        </td>
+        <td style="background: #AEF1AE">
+          l.:+[Int, List[Int]](a)(immutable.this.List.canBuildFrom[Int])
+        </td>
+      </tr><tr>
+        <td>
+          29
+        </td>
+        <td>
+          15
+        </td>
+        <td>
+          726
+          -
+          736
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.==
+        </td>
+        <td style="background: #AEF1AE">
+          n.%(a).==(0)
+        </td>
+      </tr><tr>
+        <td>
+          30
+        </td>
+        <td>
+          23
+        </td>
+        <td>
+          778
+          -
+          801
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          Factor.findFactor
+        </td>
+        <td style="background: #AEF1AE">
+          findFactor(n, a.+(1), l)
+        </td>
+      </tr><tr>
+        <td>
+          30
+        </td>
+        <td>
+          22
+        </td>
+        <td>
+          778
+          -
+          801
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Factor.findFactor
+        </td>
+        <td style="background: #AEF1AE">
+          findFactor(n, a.+(1), l)
+        </td>
+      </tr><tr>
+        <td>
+          30
+        </td>
+        <td>
+          21
+        </td>
+        <td>
+          792
+          -
+          797
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #AEF1AE">
+          a.+(1)
+        </td>
+      </tr><tr>
+        <td>
+          33
+        </td>
+        <td>
+          24
+        </td>
+        <td>
+          813
+          -
+          826
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Factor.findFactor
+        </td>
+        <td style="background: #AEF1AE">
+          findFactor(n, findFactor$default$2, findFactor$default$3)
+        </td>
+      </tr><tr>
+        <td>
+          40
+        </td>
+        <td>
+          26
+        </td>
+        <td>
+          989
+          -
+          1001
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.==
+        </td>
+        <td style="background: #AEF1AE">
+          num.%(n).==(0)
+        </td>
+      </tr><tr>
+        <td>
+          40
+        </td>
+        <td>
+          31
+        </td>
+        <td>
+          966
+          -
+          1054
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.generic.FilterMonadic.foreach
+        </td>
+        <td style="background: #AEF1AE">
+          scala.Predef.intWrapper(2).to(num).withFilter(((n: Int) =&gt; num.%(n).==(0))).foreach[Nothing](((n: Int) =&gt; return PrimeFactor.this.listPrimeFactor(num./(n), list.:+[Int, List[Int]](n)(immutable.this.List.canBuildFrom[Int]))))
+        </td>
+      </tr><tr>
+        <td>
+          40
+        </td>
+        <td>
+          25
+        </td>
+        <td>
+          976
+          -
+          977
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          2
+        </td>
+      </tr><tr>
+        <td>
+          41
+        </td>
+        <td>
+          29
+        </td>
+        <td>
+          1044
+          -
+          1053
+        </td>
+        <td>
+          ApplyToImplicitArgs
+        </td>
+        <td>
+          scala.collection.SeqLike.:+
+        </td>
+        <td style="background: #AEF1AE">
+          list.:+[Int, List[Int]](n)(immutable.this.List.canBuildFrom[Int])
+        </td>
+      </tr><tr>
+        <td>
+          41
+        </td>
+        <td>
+          28
+        </td>
+        <td>
+          1049
+          -
+          1049
+        </td>
+        <td>
+          TypeApply
+        </td>
+        <td>
+          scala.collection.immutable.List.canBuildFrom
+        </td>
+        <td style="background: #AEF1AE">
+          immutable.this.List.canBuildFrom[Int]
+        </td>
+      </tr><tr>
+        <td>
+          41
+        </td>
+        <td>
+          27
+        </td>
+        <td>
+          1035
+          -
+          1042
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int./
+        </td>
+        <td style="background: #AEF1AE">
+          num./(n)
+        </td>
+      </tr><tr>
+        <td>
+          41
+        </td>
+        <td>
+          30
+        </td>
+        <td>
+          1019
+          -
+          1054
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          PrimeFactor.listPrimeFactor
+        </td>
+        <td style="background: #AEF1AE">
+          PrimeFactor.this.listPrimeFactor(num./(n), list.:+[Int, List[Int]](n)(immutable.this.List.canBuildFrom[Int]))
+        </td>
+      </tr><tr>
+        <td>
+          51
+        </td>
+        <td>
+          32
+        </td>
+        <td>
+          1321
+          -
+          1324
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          '{'
+        </td>
+      </tr><tr>
+        <td>
+          51
+        </td>
+        <td>
+          35
+        </td>
+        <td>
+          1375
+          -
+          1380
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          m.&gt;(0)
+        </td>
+      </tr><tr>
+        <td>
+          51
+        </td>
+        <td>
+          34
+        </td>
+        <td>
+          1350
+          -
+          1368
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Char.==
+        </td>
+        <td style="background: #AEF1AE">
+          s.charAt(m).==('(')
+        </td>
+      </tr><tr>
+        <td>
+          51
+        </td>
+        <td>
+          36
+        </td>
+        <td>
+          1304
+          -
+          1381
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Boolean.&amp;&amp;
+        </td>
+        <td style="background: #AEF1AE">
+          s.charAt(m).==('{').||(s.charAt(m).==('[')).||(s.charAt(m).==('(')).&amp;&amp;(m.&gt;(0))
+        </td>
+      </tr><tr>
+        <td>
+          51
+        </td>
+        <td>
+          33
+        </td>
+        <td>
+          1328
+          -
+          1346
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Char.==
+        </td>
+        <td style="background: #AEF1AE">
+          s.charAt(m).==('[')
+        </td>
+      </tr><tr>
+        <td>
+          52
+        </td>
+        <td>
+          38
+        </td>
+        <td>
+          1415
+          -
+          1422
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #AEF1AE">
+          sum.+(1)
+        </td>
+      </tr><tr>
+        <td>
+          52
+        </td>
+        <td>
+          37
+        </td>
+        <td>
+          1408
+          -
+          1413
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.-
+        </td>
+        <td style="background: #AEF1AE">
+          m.-(1)
+        </td>
+      </tr><tr>
+        <td>
+          52
+        </td>
+        <td>
+          39
+        </td>
+        <td>
+          1394
+          -
+          1430
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Brackets.matchBrackets
+        </td>
+        <td style="background: #AEF1AE">
+          matchBrackets(m.-(1), sum.+(1), count)
+        </td>
+      </tr><tr>
+        <td>
+          53
+        </td>
+        <td>
+          41
+        </td>
+        <td>
+          1484
+          -
+          1504
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Any.==
+        </td>
+        <td style="background: #AEF1AE">
+          scala.Predef.augmentString(s).contains[AnyVal](m).==(']')
+        </td>
+      </tr><tr>
+        <td>
+          53
+        </td>
+        <td>
+          44
+        </td>
+        <td>
+          1460
+          -
+          1539
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Boolean.&amp;&amp;
+        </td>
+        <td style="background: #AEF1AE">
+          s.charAt(m).==('}').||(scala.Predef.augmentString(s).contains[AnyVal](m).==(']')).||(s.charAt(m).==(')')).&amp;&amp;(m.&gt;(0))
+        </td>
+      </tr><tr>
+        <td>
+          53
+        </td>
+        <td>
+          40
+        </td>
+        <td>
+          1477
+          -
+          1480
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          '}'
+        </td>
+      </tr><tr>
+        <td>
+          53
+        </td>
+        <td>
+          43
+        </td>
+        <td>
+          1533
+          -
+          1538
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          m.&gt;(0)
+        </td>
+      </tr><tr>
+        <td>
+          53
+        </td>
+        <td>
+          42
+        </td>
+        <td>
+          1508
+          -
+          1526
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Char.==
+        </td>
+        <td style="background: #AEF1AE">
+          s.charAt(m).==(')')
+        </td>
+      </tr><tr>
+        <td>
+          54
+        </td>
+        <td>
+          47
+        </td>
+        <td>
+          1552
+          -
+          1588
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Brackets.matchBrackets
+        </td>
+        <td style="background: #AEF1AE">
+          matchBrackets(m.-(1), sum, count.+(1))
+        </td>
+      </tr><tr>
+        <td>
+          54
+        </td>
+        <td>
+          46
+        </td>
+        <td>
+          1578
+          -
+          1587
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.+
+        </td>
+        <td style="background: #AEF1AE">
+          count.+(1)
+        </td>
+      </tr><tr>
+        <td>
+          54
+        </td>
+        <td>
+          45
+        </td>
+        <td>
+          1566
+          -
+          1571
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.-
+        </td>
+        <td style="background: #AEF1AE">
+          m.-(1)
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          50
+        </td>
+        <td>
+          1624
+          -
+          1656
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Brackets.matchBrackets
+        </td>
+        <td style="background: #AEF1AE">
+          matchBrackets(m.-(1), sum, count)
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          49
+        </td>
+        <td>
+          1638
+          -
+          1643
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.-
+        </td>
+        <td style="background: #AEF1AE">
+          m.-(1)
+        </td>
+      </tr><tr>
+        <td>
+          55
+        </td>
+        <td>
+          48
+        </td>
+        <td>
+          1614
+          -
+          1619
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          m.&gt;(0)
+        </td>
+      </tr><tr>
+        <td>
+          56
+        </td>
+        <td>
+          53
+        </td>
+        <td>
+          1719
+          -
+          1723
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          true
+        </td>
+      </tr><tr>
+        <td>
+          56
+        </td>
+        <td>
+          56
+        </td>
+        <td>
+          1729
+          -
+          1734
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          false
+        </td>
+      </tr><tr>
+        <td>
+          56
+        </td>
+        <td>
+          55
+        </td>
+        <td>
+          1729
+          -
+          1734
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          false
+        </td>
+      </tr><tr>
+        <td>
+          56
+        </td>
+        <td>
+          52
+        </td>
+        <td>
+          1691
+          -
+          1717
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Boolean.&amp;&amp;
+        </td>
+        <td style="background: #AEF1AE">
+          count.==(sum).&amp;&amp;(m.==(0))
+        </td>
+      </tr><tr>
+        <td>
+          56
+        </td>
+        <td>
+          54
+        </td>
+        <td>
+          1719
+          -
+          1723
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          true
+        </td>
+      </tr><tr>
+        <td>
+          56
+        </td>
+        <td>
+          51
+        </td>
+        <td>
+          1710
+          -
+          1716
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.==
+        </td>
+        <td style="background: #AEF1AE">
+          m.==(0)
+        </td>
+      </tr><tr>
+        <td>
+          61
+        </td>
+        <td>
+          58
+        </td>
+        <td>
+          1785
+          -
+          1812
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          Brackets.matchBrackets
+        </td>
+        <td style="background: #AEF1AE">
+          matchBrackets(s.length().-(1), matchBrackets$default$2, matchBrackets$default$3)
+        </td>
+      </tr><tr>
+        <td>
+          61
+        </td>
+        <td>
+          57
+        </td>
+        <td>
+          1799
+          -
+          1811
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.Int.-
+        </td>
+        <td style="background: #AEF1AE">
+          s.length().-(1)
+        </td>
+      </tr><tr>
+        <td>
+          68
+        </td>
+        <td>
+          59
+        </td>
+        <td>
+          1932
+          -
+          1940
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.Object.==
+        </td>
+        <td style="background: #AEF1AE">
+          l1.==(l2)
+        </td>
+      </tr><tr>
+        <td>
+          68
+        </td>
+        <td>
+          60
+        </td>
+        <td>
+          1945
+          -
+          1949
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          true
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          62
+        </td>
+        <td>
+          1991
+          -
+          1995
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          true
+        </td>
+      </tr><tr>
+        <td>
+          69
+        </td>
+        <td>
+          61
+        </td>
+        <td>
+          1971
+          -
+          1986
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.LinearSeqOptimized.contains
+        </td>
+        <td style="background: #AEF1AE">
+          l1.contains[Any](l2)
+        </td>
+      </tr><tr>
+        <td>
+          70
+        </td>
+        <td>
+          64
+        </td>
+        <td>
+          2037
+          -
+          2041
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          true
+        </td>
+      </tr><tr>
+        <td>
+          70
+        </td>
+        <td>
+          63
+        </td>
+        <td>
+          2017
+          -
+          2032
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          scala.collection.LinearSeqOptimized.contains
+        </td>
+        <td style="background: #AEF1AE">
+          l2.contains[Any](l1)
+        </td>
+      </tr><tr>
+        <td>
+          71
+        </td>
+        <td>
+          65
+        </td>
+        <td>
+          2056
+          -
+          2061
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          false
+        </td>
+      </tr><tr>
+        <td>
+          79
+        </td>
+        <td>
+          68
+        </td>
+        <td>
+          2198
+          -
+          2202
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          true
+        </td>
+      </tr><tr>
+        <td>
+          79
+        </td>
+        <td>
+          67
+        </td>
+        <td>
+          2198
+          -
+          2202
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #AEF1AE">
+          true
+        </td>
+      </tr><tr>
+        <td>
+          79
+        </td>
+        <td>
+          70
+        </td>
+        <td>
+          2208
+          -
+          2213
+        </td>
+        <td>
+          Block
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          false
+        </td>
+      </tr><tr>
+        <td>
+          79
+        </td>
+        <td>
+          69
+        </td>
+        <td>
+          2208
+          -
+          2213
+        </td>
+        <td>
+          Literal
+        </td>
+        <td>
+          &lt;nosymbol&gt;
+        </td>
+        <td style="background: #F0ADAD">
+          false
+        </td>
+      </tr><tr>
+        <td>
+          79
+        </td>
+        <td>
+          66
+        </td>
+        <td>
+          2173
+          -
+          2196
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.matches
+        </td>
+        <td style="background: #AEF1AE">
+          str.matches(expression)
+        </td>
+      </tr><tr>
+        <td>
+          85
+        </td>
+        <td>
+          71
+        </td>
+        <td>
+          2307
+          -
+          2337
+        </td>
+        <td>
+          Apply
+        </td>
+        <td>
+          java.lang.String.replaceAll
+        </td>
+        <td style="background: #AEF1AE">
+          str.replaceAll(expression, &quot; &quot;)
+        </td>
+      </tr>
+    </table>
+          </div>
+        </div>
+      </body>
+    </html>

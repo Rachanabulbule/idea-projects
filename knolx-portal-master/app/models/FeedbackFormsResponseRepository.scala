@@ -1,0 +1,138 @@
+package models
+
+import javax.inject.Inject
+
+import models.FeedbackFormsResponseFormat._
+import play.api.libs.json.{JsValue, Json}
+import play.modules.reactivemongo.ReactiveMongoApi
+import reactivemongo.api.Cursor.FailOnError
+import reactivemongo.api.ReadPreference
+import reactivemongo.api.commands.WriteResult
+import reactivemongo.bson.{BSONDateTime, BSONDocument, BSONDocumentWriter, BSONObjectID, BSONString}
+import reactivemongo.play.json.collection.JSONCollection
+
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.{ExecutionContext, Future}
+
+// this is not an unused import contrary to what intellij suggests, do not optimize
+import reactivemongo.play.json.BSONFormats.BSONObjectIDFormat
+import reactivemongo.play.json.BSONFormats.BSONDateTimeFormat
+
+case class QuestionResponse(question: String, options: List[String], response: String)
+
+case class FeedbackFormsResponse(email: String,
+                                 coreMember: Boolean,
+                                 presenter: String,
+                                 userId: String,
+                                 sessionId: String,
+                                 sessionTopic: String,
+                                 meetup: Boolean,
+                                 sessiondate: BSONDateTime,
+                                 session: String,
+                                 feedbackResponse: List[QuestionResponse],
+                                 responseDate: BSONDateTime,
+                                 score: Double,
+                                 _id: BSONObjectID = BSONObjectID.generate)
+
+object FeedbackFormsResponseFormat {
+
+  import play.api.libs.json.Json
+
+  implicit val questionResponseFormat = Json.format[QuestionResponse]
+  implicit val feedbackFormResponseFormat = Json.format[FeedbackFormsResponse]
+
+  implicit object QuestionWriter extends BSONDocumentWriter[QuestionResponse] {
+    def write(questionResponse: QuestionResponse): BSONDocument = BSONDocument(
+      "question" -> questionResponse.question,
+      "options" -> questionResponse.options,
+      "response" -> questionResponse.response)
+  }
+
+}
+
+class FeedbackFormsResponseRepository @Inject()(reactiveMongoApi: ReactiveMongoApi) {
+
+  import play.modules.reactivemongo.json._
+
+  protected def collection: Future[JSONCollection] = reactiveMongoApi.database.map(_.collection[JSONCollection]("feedbackformsresponse"))
+
+  def upsert(feedbackFormsResponse: FeedbackFormsResponse)(implicit ex: ExecutionContext): Future[WriteResult] = {
+    val selector = BSONDocument("userId" -> feedbackFormsResponse.userId, "sessionId" -> feedbackFormsResponse.sessionId)
+
+    val modifier =
+      BSONDocument(
+        "$set" -> BSONDocument(
+          "email" -> feedbackFormsResponse.email,
+          "coreMember" -> feedbackFormsResponse.coreMember,
+          "presenter" -> feedbackFormsResponse.presenter,
+          "userId" -> feedbackFormsResponse.userId,
+          "sessionId" -> feedbackFormsResponse.sessionId,
+          "sessionTopic" -> feedbackFormsResponse.sessionTopic,
+          "meetup" -> feedbackFormsResponse.meetup,
+          "sessiondate" -> feedbackFormsResponse.sessiondate,
+          "session" -> feedbackFormsResponse.session,
+          "feedbackResponse" -> feedbackFormsResponse.feedbackResponse,
+          "responseDate" -> feedbackFormsResponse.responseDate,
+          "score" -> feedbackFormsResponse.score
+        ))
+
+    collection.flatMap(_.update(selector, modifier, upsert = true))
+  }
+
+  def getByUsersSession(userId: String, SessionId: String): Future[Option[FeedbackFormsResponse]] =
+    collection
+      .flatMap(jsonCollection =>
+        jsonCollection
+          .find(Json.obj("userId" -> userId, "sessionId" -> SessionId))
+          .cursor[FeedbackFormsResponse](ReadPreference.Primary).headOption)
+
+  def allResponsesBySession(sessionId: String, presentersEmail: Option[String] = None): Future[List[FeedbackFormsResponse]] = {
+    val condition = presentersEmail.fold {
+      Json.obj("sessionId" -> sessionId)
+    } { email =>
+      Json.obj("presenter" -> email, "sessionId" -> sessionId)
+    }
+
+    collection
+      .flatMap(jsonCollection =>
+        jsonCollection
+          .find(condition)
+          .cursor[FeedbackFormsResponse](ReadPreference.Primary)
+          .collect[List](-1, FailOnError[List[FeedbackFormsResponse]]()))
+  }
+
+  def getAllResponseEmailsPerSession(sessionId: String)(implicit ex: ExecutionContext): Future[List[String]] = {
+    val query = Json.obj("sessionId" -> sessionId)
+    val projection = Json.obj("email" -> 1)
+
+    collection
+      .flatMap(jsonCollection =>
+        jsonCollection
+          .find(query, projection)
+          .cursor[JsValue](ReadPreference.Primary)
+          .collect[List](-1, FailOnError[List[JsValue]]())
+      ).map(_.flatMap(_ ("email").asOpt[String]))
+  }
+
+  def getScoresOfMembers(sessionId: String, isCoreMember: Boolean)(implicit ex: ExecutionContext): Future[List[Double]] = {
+    val query = Json.obj("sessionId" -> sessionId, "coreMember" -> isCoreMember)
+    val projection = Json.obj("score" -> 1)
+
+    collection
+      .flatMap(jsonCollection =>
+        jsonCollection
+          .find(query, projection)
+          .cursor[JsValue](ReadPreference.Primary)
+          .collect[List](-1, FailOnError[List[JsValue]]())
+      ).map(_.flatMap(_ ("score").asOpt[Double]))
+  }
+
+  def userCountDidNotAttendSession(email: String): Future[Int] = {
+    val condition = Some(Json.obj("email" -> email, "score" -> 0D))
+
+    collection
+      .flatMap(jsonCollection =>
+        jsonCollection.count(condition))
+  }
+
+}

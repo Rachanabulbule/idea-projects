@@ -1,0 +1,4 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/knoldus/IdeaProjects/Practice/src/test/scala/TestPractice.scala:1:24: imported `Pattern' is permanently hidden by definition of class Pattern[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport java.util.regex.Pattern[0m
+[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

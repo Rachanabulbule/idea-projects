@@ -1,0 +1,4 @@
+[error] /home/knoldus/IdeaProjects/scala-05-assignment/project/plugins.scala:1:1: expected class or object definition
+[error] addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.11.2")
+[error] ^
+[error] one error found

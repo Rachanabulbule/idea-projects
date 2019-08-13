@@ -1,0 +1,96 @@
+.feedback-form-container {
+    background-color: #fff;
+    color: #000;
+    margin-top: 20px;
+    padding: 0px 0px;
+ // padding-bottom: 50 px;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+}
+
+.feedback-div-outer {
+    padding: 30px 0px 30px 0px;
+}
+
+.feedback-form {
+
+    width: 12em;
+    height: 12em;
+    float: none;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.feedback-form-upper {
+    width: 70%;
+    height: 70%;
+    float: none;
+    margin: 0 auto;
+    background-image: url('../images/file.png');
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.feedback-form-lower {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #27AE60;
+}
+
+.new-feedback-button {
+    height: 80px;
+    line-height: 75px;
+}
+
+.btn-create-feed {
+    padding: 5px 15px 5px 15px;
+    background-color: rgb(125, 158, 192);
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 4px 5px -5px #333;
+}
+
+a.btn.btn-sm.btn-primary.btn-create-feed:hover {
+    background-color: #2e6da4;
+}
+
+.custom-fadein {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+}
+
+.flash-success {
+    margin-top: 20px;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+.flash-failure {
+    margin-top: 20px;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+.feedback-form-restricted {
+    text-align: center;
+}
+
+.custom-attributes {
+    border-top: 1px solid #fff;
+}

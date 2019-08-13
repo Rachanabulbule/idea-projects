@@ -1,0 +1,84 @@
+@()(implicit request: Request[_])
+
+@main("Create Feedback Form") {
+    <div class="row">
+        <div class="col-md-3" >
+
+        </div>
+        <div class="col-md-6" >
+            <div class="container-fluid registration-error">
+            </div>
+
+            <div id="response">
+            </div>
+            <form id="feedbackform">
+
+                <input value="@helper.CSRF.getToken.value" id="csrfToken" hidden/>
+
+                <div id="questions">
+                    <div class ="question-card first-question-card">
+                        <div class="col-md-12 feedback-title" >
+                            <input id="form-name" placeholder="Form Title" type="text">
+                        </div>
+                        <div id="question-0">
+                            <div class="col-md-12">
+                                <input class="card-questions" id="questionValue-0" placeholder="Question ?" type="text">
+                            </div>
+
+                            <br>
+
+                            <div id="options-0">
+                                <div class="row" id="option-0-0">
+                                    <div class="col-md-1" > </div>
+                                    <div class="col-md-10" >
+                                        <label class="radio-button">
+                                            <input type='radio' disabled name='radopt' id='' class='custom-checkbox' value='true'/>
+                                            <span class="lab_text"></span>
+                                            <p class="checkbox-text">
+                                                <input id="optionValue-0-0" class="card-options" type="text" value="Did not attend" readonly/>
+                                            </p>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-1" ></div>
+                                </div>
+                            </div>
+
+                            <div id="parent" class="add-option-parent">
+                                <div class="add-option">
+                                    <i id="addOption-0-0" class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div id="parent" class="add-question-parent">
+                <div class="text-alignment add-question-button">
+                    <div ><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                </div>
+                <div id="" class="text-alignment">
+                    <div id="" class="adjacent"><div class="notch">&#9650;</div>
+                        <div id="addQuestionButton" class='add-type-option-common add-type-option-mcq'>
+                            <i class="fa fa-list-ul"></i>
+                            <p class="add-type-option-common_text">MCQ</p>
+                        </div>
+                        <div class='type-partition'></div>
+                        <div id="addCommentButton" class='add-type-option-common add-type-option-comment'>
+                            <i class="fa fa-comment"></i>
+                            <p class="add-type-option-common_text add-type-option-comment_text">Comment</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button id="feedbackFormCreate" type="button" class="btn btn-primary btn-lg create-feedback-button">Create</button>
+        </div>
+
+        <div class="col-md-3" ></div>
+    </div>
+    <script src="@routes.Assets.versioned("javascripts/collapsemanagemenu.js")" type="text/javascript"></script>
+}
+
+<script src="@routes.Assets.versioned("javascripts/feedbackform.js")" type="text/javascript"></script>

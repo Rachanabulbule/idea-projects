@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/IdeaProjects/scala-05-assignment/src/test/scala/com/knoldus/Calculator/TestCalculator.scala:23:53: not found: value Calculator[0m
+[0m[[0m[31merror[0m] [0m[0m    an[IllegalArgumentException] should be thrownBy Calculator(num2 = 0)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/knoldus/IdeaProjects/scala-05-assignment/src/test/scala/com/knoldus/Calculator/TestCalculator.scala:23:64: not found: value num2[0m
+[0m[[0m[31merror[0m] [0m[0m    an[IllegalArgumentException] should be thrownBy Calculator(num2 = 0)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

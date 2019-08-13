@@ -1,0 +1,129 @@
+.login-outer {
+    height: auto;
+    background-color: #ffffff;
+    color: inherit;
+    padding: 10px 10px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+
+.default-top-margin {
+    margin-top: 10%;
+}
+
+.user-manage-outer {
+    height: auto;
+    float: left;
+    min-height: 420px;
+}
+
+.forgot-password-outer {
+    height: 140px;
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+}
+
+.login-first {
+    height: 80px;
+    padding: 0px 0px;
+    background-color: rgb(125, 158, 192);
+    box-shadow: 0 9px 8px -5px #a8a8a8;
+    border-bottom: 1px solid #fff;
+}
+
+.forget-password {
+    text-align: center;
+    padding-top: 10px !important;
+}
+
+.top-container {
+    margin-top: 40px;
+}
+
+.login-second {
+    margin-bottom: 15px;
+}
+
+.no-outline {
+    outline: none;
+}
+
+.input-field {
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    color: inherit;
+    display: block;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+
+input:invalid {
+    box-shadow: None !important;
+}
+
+.login-third {
+    padding-top: 30px;
+}
+
+.login-button {
+    padding: 5px;
+    background-color: #1ab394;
+    color: #fff;
+    border: None;
+    outline: none;
+    font-weight: 900;
+}
+
+.forgot-password {
+    font-size: 20px;
+    margin-right: 5px;
+    margin-top: 20px;
+    color: #EC7063;
+}
+
+.forgot-password-link {
+    text-decoration: none !important;
+}
+
+input.input-field.logo:focus {
+    outline: none;
+    border-bottom: 2px solid #45B39D;
+}
+
+.error {
+    padding-top: 30px;
+    line-height: 15px;
+    text-align: center;
+}
+
+.login-error {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.change-password-label, .reset-password-label {
+    font-weight: none;
+    float: left;
+}
+
+@media only screen and (max-width: 767px) {
+    .login-outer {
+        text-align: left;
+        margin: auto 0px;
+    }
+
+    .sign-in-form {
+        text-align: center;
+    }
+
+    .register-mobile-div {
+        margin-top: 40px;
+    }
+}

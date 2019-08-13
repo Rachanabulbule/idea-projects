@@ -1,0 +1,7 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mTestCalculator:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCalculator[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should perform addition of numbers[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Perform subtraction of numbers[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Perform multiplication of numbers[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Perform division of numbers[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not accept num2 equal to 0[0m[0m
